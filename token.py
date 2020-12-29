@@ -7,7 +7,7 @@ class Token:
 
     def __str__(self):
         """String representation of a Token"""
-        return f"Token Info:\n\tType: {self.type}\n\tValue: {self.value}\n\tLine: {self.line_number}\n"
+        return f"{self.type} ({self.value}) on Line {self.line_number}"
 
     def __repr__(self):
         return self.__str__()
