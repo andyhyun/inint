@@ -1,6 +1,8 @@
+from token_type import TokenType
+
 class Token:
 
-    def __init__(self, type, value, line_number):
+    def __init__(self, type: TokenType, value, line_number: int):
         self.type = type
         self.value = value
         self.line_number = line_number
