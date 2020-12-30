@@ -13,7 +13,7 @@ class TokenType(Enum):
     RCONST = "RCONST"
     SCONST = "SCONST"
     PLUS = "+"
-    MINUS = "="
+    MINUS = "-"
     MULT = "*"
     DIV = "/"
     EQ = "="
