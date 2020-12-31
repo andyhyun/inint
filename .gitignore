@@ -1,3 +1,4 @@
 venv/
 .idea/
 test_programs/
+__pycache__/
