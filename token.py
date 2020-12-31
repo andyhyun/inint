@@ -1,11 +1,18 @@
 from token_type import TokenType
 
+
 class Token:
 
     def __init__(self, type: TokenType, value, line_number: int):
         self.type = type
         self.value = value
         self.line_number = line_number
+
+    def __eq__(self, other):
+        return self.type == other.type
+
+    def __ne__(self, other):
+        return self.type != other.type
 
     def __str__(self):
         """String representation of a Token"""
