@@ -1,6 +1,3 @@
-from token_type import TokenType
-
-
 class Token:
 
     def __init__(self, type, value, line_number):
