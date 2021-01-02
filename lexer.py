@@ -44,6 +44,13 @@ class Lexer:
         else:
             self.current_char = self.text[self.char_position]
 
+    def peek(self):
+        peek_position = self.char_position + 1
+        if peek_position >= len(self.text):
+            return None
+        else:
+            return self.text[peek_position]
+
     def token_to_be_returned(self):
         lexeme = self.current_lexeme
         return_token = None
