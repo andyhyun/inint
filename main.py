@@ -8,7 +8,7 @@ def main():
     print("Lexical analysis is starting:\n")
     token_count = 0
     tok = lexical_analyzer.get_next_token()
-    while tok != Token(TokenType.EOF, "", 0):
+    while tok.token_type != TokenType.EOF:
         print(tok)
         token_count += 1
         tok = lexical_analyzer.get_next_token()
