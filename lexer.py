@@ -1,6 +1,7 @@
-from token_type import *
-from token_class import *
-from error import *
+from enum import Enum, auto
+from token_type import TokenType
+from token_class import Token
+import error
 
 KEYWORDS = {
     "print": TokenType.PRINT,
@@ -12,14 +13,14 @@ KEYWORDS = {
 
 
 class State(Enum):
-    START = 0
-    IN_IDENT = 1
-    IN_ICONST = 2
-    IN_RCONST = 3
-    IN_SCONST = 4
-    IN_COMMENT = 5
-    POSSIBLE_RCONST = 6
-    POSSIBLE_COMMENT = 7
+    START = auto()
+    IN_IDENT = auto()
+    IN_ICONST = auto()
+    IN_RCONST = auto()
+    IN_SCONST = auto()
+    IN_COMMENT = auto()
+    POSSIBLE_RCONST = auto()
+    POSSIBLE_COMMENT = auto()
 
 
 class Lexer:
@@ -34,8 +35,8 @@ class Lexer:
 
     def error(self, message=""):
         if len(message) == 0:
-            raise LexerError(f"'{self.current_lexeme}' on line {self.line_number}")
-        raise LexerError(message)
+            raise error.LexerError(f"'{self.current_lexeme}' on line {self.line_number}")
+        raise error.LexerError(message)
 
     def advance(self):
         self.char_position += 1
