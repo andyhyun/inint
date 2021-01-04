@@ -6,3 +6,7 @@ class Error(Exception):
 
 class LexerError(Error):
     pass
+
+
+class ParserError(Error):
+    pass
