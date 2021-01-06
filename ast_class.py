@@ -13,8 +13,6 @@ class Binary(AST):
 class Program(AST):
 
     def __init__(self, chain):
-        # I might do something with program name later
-        # self.name = name
         self.chain = chain
 
 
