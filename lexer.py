@@ -67,6 +67,15 @@ class Lexer:
         self.current_lexeme = ""
         return return_token
 
+    def get_token_list(self):
+        token_list = []
+        tok = self.get_next_token()
+        while tok.token_type != TokenType.EOF:
+            token_list.append(tok)
+            tok = self.get_next_token()
+        token_list.append(tok)
+        return token_list
+
     def get_next_token(self):
         while self.current_char is not None:
             if self.current_state == State.START:

@@ -1,8 +1,10 @@
-from lexer import *
+from token_type import TokenType
+from lexer import Lexer
+from parse import Parser
 
 
 def main():
-    with open("test_programs/10.txt", "r") as program:
+    with open("test_programs/11.txt", "r") as program:
         text = program.read()
     lexical_analyzer = Lexer(text)
     print("Lexical analysis is starting:\n")
@@ -15,7 +17,14 @@ def main():
     print(tok)
     print("\nLexical analysis is now complete:")
     print(f"\tNumber of tokens: {token_count + 1}")
-    print(f"\tNumber of lines: {lexical_analyzer.line_number}")
+    print(f"\tNumber of lines: {lexical_analyzer.line_number}\n\n")
+
+    parse_test_lexer = Lexer(text)
+    token_list = parse_test_lexer.get_token_list()
+    parser = Parser(token_list)
+    print("Parsing has started:\n")
+    prog = parser.program()
+    print("\nSuccessful parse")
 
 
 if __name__ == "__main__":
