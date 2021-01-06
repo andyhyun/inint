@@ -24,7 +24,7 @@ def main():
     parser = Parser(token_list)
     print("Parsing has started:\n")
     prog = parser.program()
-    print("Successful parse")
+    print("\nSuccessful parse")
 
 
 if __name__ == "__main__":
