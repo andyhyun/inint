@@ -35,8 +35,8 @@ class Lexer:
 
     def error(self, message=""):
         if len(message) == 0:
-            raise error.LexerError(f"'{self.current_lexeme}' on line {self.line_number}")
-        raise error.LexerError(message)
+            raise error.ININTLexerError(f"'{self.current_lexeme}' on line {self.line_number}")
+        raise error.ININTLexerError(message)
 
     def advance(self):
         self.char_position += 1
