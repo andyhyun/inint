@@ -4,9 +4,13 @@ class Error(Exception):
         self.message = f"{self.__class__.__name__}: {message}"
 
 
-class LexerError(Error):
+class ININTLexerError(Error):
     pass
 
 
-class ParserError(Error):
+class ININTParserError(Error):
+    pass
+
+
+class ININTRuntimeError(Error):
     pass

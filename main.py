@@ -1,6 +1,7 @@
 from token_type import TokenType
 from lexer import Lexer
 from parse import Parser
+from interpreter import Interpreter
 
 
 def main():
@@ -25,6 +26,11 @@ def main():
     print("Parsing has started:\n")
     prog = parser.program()
     print("\nSuccessful parse")
+
+    interpreter_test_parser = Parser(token_list)
+    tree = interpreter_test_parser.program()
+    interpret = Interpreter(tree)
+    interpret.interpret()
 
 
 if __name__ == "__main__":
