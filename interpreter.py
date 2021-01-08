@@ -32,7 +32,7 @@ class Interpreter:
         elif operator.token_type == TokenType.MULT:
             return left * right
         elif operator.token_type == TokenType.DIV:
-            if isinstance(left, int) and isinstance(right, int):
+            if isinstance(left, int) and isinstance(right, int) and left % right == 0:
                 return left // right
             return left / right
         else:
