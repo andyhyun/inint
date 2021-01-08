@@ -1,0 +1,7 @@
+// Clean Program
+
+begin
+    // Concatenating strings and numbers
+    print(1 + 2 + 3 + "hello");
+    print("\nhello" + 1 + 2 + 3);
+end

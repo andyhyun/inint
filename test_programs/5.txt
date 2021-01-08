@@ -1,0 +1,6 @@
+// Invalid String Operation
+
+begin
+    print("Hello\n");
+    print(3 / "Hello");
+end

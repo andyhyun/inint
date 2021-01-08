@@ -1,0 +1,8 @@
+// String missing the end quote
+
+begin
+    x = 5;
+    print(x);
+    y = "This is bad;
+    print(y);
+end

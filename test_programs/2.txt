@@ -1,0 +1,8 @@
+// Clean Program
+
+begin
+    print("Testing print and if statements\n");
+    x = 0;
+    if(x) then print("If you see this, if statements are not working\n");
+    if(x + 1) then print("If you see this, if statements are working\n");
+end

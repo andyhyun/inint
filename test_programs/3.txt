@@ -1,0 +1,11 @@
+// Clean Program
+
+begin
+    // Testing order of operations
+    a = (3 + 4) * 2 - 6 / 3;
+    b = 3 + 4 * (2 - 6) / 3;
+    c = 3 + 4 * 2 - 6 / 3;
+    print("(3 + 4) * 2 - 6 / 3 = " + a);
+    print("\n3 + 4 * (2 - 6) / 3 = " + b);
+    print("\n3 + 4 * 2 - 6 / 3 = " + c);
+end
