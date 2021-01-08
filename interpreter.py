@@ -21,15 +21,19 @@ class Interpreter:
             self.error("Invalid type")
 
     def perform_operation(self, left, operator, right):
-        if self.is_sconst(left) or self.is_sconst(right):
-            self.error("Cannot perform operations on strings")
+        if (self.is_sconst(left) or self.is_sconst(right)) and operator.token_type != TokenType.PLUS:
+            self.error("Cannot perform non-addition operations on strings")
         if operator.token_type == TokenType.PLUS:
+            if self.is_sconst(left) or self.is_sconst(right):
+                return str(left) + str(right)
             return left + right
         elif operator.token_type == TokenType.MINUS:
             return left - right
         elif operator.token_type == TokenType.MULT:
             return left * right
         elif operator.token_type == TokenType.DIV:
+            if isinstance(left, int) and isinstance(right, int):
+                return left // right
             return left / right
         else:
             self.error("Invalid operator")
@@ -63,7 +67,9 @@ class Interpreter:
 
     def visit_Print(self, node):
         expr = self.visit_Expr(node.expression)
-        print(expr)
+        if isinstance(expr, str):
+            expr = expr.replace("\\n", "\n")
+        print(expr, end="")
 
     def visit_If(self, node):
         cond = self.visit_Expr(node.condition)
