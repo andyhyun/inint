@@ -12,7 +12,8 @@ class Parser:
 
     def error(self, message=""):
         if len(message) == 0:
-            raise error.ININTParserError(f"Unexpected {self.current_token.value} on line {self.current_token.line_number}")
+            raise error.ININTParserError(f"Unexpected {self.current_token.value} "
+                                         f"on line {self.current_token.line_number}")
         raise error.ININTParserError(message)
 
     def advance(self):
