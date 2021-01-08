@@ -1,0 +1,11 @@
+// Clean Program
+
+begin
+    pi = 3.14159;
+    r = 4;
+    a1 = pi * r * r;
+    r = r * 2;
+    a2 = pi * r * r;
+    print("Area 1: " + a1);
+    print("\nArea 2: " + a2);
+end

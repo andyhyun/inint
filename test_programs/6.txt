@@ -1,0 +1,7 @@
+// Missing semicolon at the end of a statement
+
+begin
+    print("Hello\n");
+    x = 5
+    print("Hello again\n");
+end
