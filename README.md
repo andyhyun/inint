@@ -1,5 +1,5 @@
 # ININT
-ININT is a minimal programming language, with an interpreter written in Python.
+ININT is a minimal, dynamically typed programming language, with an interpreter written in Python.
 
 # Grammar
 The grammar rules for ININT are (roughly):
@@ -19,6 +19,8 @@ factor      ::= ident | iconst | rconst | sconst | (expr)
 # Examples
 A program calculating the area of a circle with radius *r*:
 ```
+// Single-line comment
+
 begin
     pi = 3.14159;
     r = 4;
